@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>TURBO DRIFT – Car Racing</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════ SCREENS ═══════════════ -->
+  <div id="screen-main-menu" class="screen active">
+    <div class="menu-bg-art"></div>
+    <div class="menu-content">
+      <div class="logo-block">
+        <div class="logo-top">TURBO</div>
+        <div class="logo-bot">DRIFT</div>
+        <div class="logo-sub">20 LEVELS OF PURE SPEED</div>
+      </div>
+      <button class="btn-primary" id="btn-start">▶  PLAY</button>
+      <button class="btn-secondary" id="btn-credits">CREDITS</button>
+      <div class="hud-corner">TAP ▶ to begin</div>
+    </div>
+  </div>
+
+  <div id="screen-tutorial" class="screen">
+    <div class="tutorial-panel">
+      <div class="tutorial-level-badge" id="tut-badge">LVL 1</div>
+      <h2 class="tutorial-title" id="tut-title">ROOKIE TRACK</h2>
+      <div class="tutorial-body" id="tut-body"></div>
+      <div class="tutorial-tips" id="tut-tips"></div>
+      <div class="controls-hint">
+        <div class="ctrl"><span>←  →</span> Steer</div>
+        <div class="ctrl"><span>↑</span> Accelerate</div>
+        <div class="ctrl"><span>↓ / SPACE</span> Brake</div>
+        <div class="ctrl touch-only"><span>On-screen</span> D-Pad</div>
+      </div>
+      <button class="btn-primary" id="btn-go">RACE! 🏁</button>
+    </div>
+  </div>
+
+  <div id="screen-game" class="screen">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div id="hud-level">LVL <span id="hud-lvl-num">1</span></div>
+      <div id="hud-speed">0 <span>km/h</span></div>
+      <div id="hud-timer">0.00<span>s</span></div>
+      <div id="hud-lap">LAP <span id="hud-lap-num">1</span> / <span id="hud-lap-total">2</span></div>
+      <div id="hud-target">TARGET <span id="hud-target-time">--</span>s</div>
+    </div>
+
+    <!-- Touch D-Pad -->
+    <div id="dpad">
+      <button class="dpad-btn" id="dpad-up">▲</button>
+      <div class="dpad-row">
+        <button class="dpad-btn" id="dpad-left">◀</button>
+        <button class="dpad-btn dpad-center" id="dpad-brake">■</button>
+        <button class="dpad-btn" id="dpad-right">▶</button>
+      </div>
+    </div>
+
+    <div id="minimap-container">
+      <canvas id="minimapCanvas" width="100" height="100"></canvas>
+    </div>
+  </div>
+
+  <div id="screen-result" class="screen">
+    <div class="result-panel">
+      <div class="result-icon" id="result-icon">🏆</div>
+      <div class="result-title" id="result-title">LEVEL CLEAR!</div>
+      <div class="result-stats" id="result-stats"></div>
+      <div class="result-stars" id="result-stars"></div>
+      <button class="btn-primary" id="btn-next">NEXT LEVEL ▶</button>
+      <button class="btn-secondary" id="btn-retry">RETRY</button>
+      <button class="btn-ghost" id="btn-menu">MENU</button>
+    </div>
+  </div>
+
+  <div id="screen-credits" class="screen">
+    <div class="credits-inner">
+      <h2>TURBO DRIFT</h2>
+      <p>A canvas-based 3D racing game</p>
+      <p>Built with pure HTML5 / CSS3 / JS</p>
+      <p style="margin-top:2rem;opacity:.5;font-size:.8rem">WASD or Arrow Keys to drive<br>Touch D-pad on mobile/iPad</p>
+      <button class="btn-secondary" id="btn-credits-back">BACK</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/levels.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
